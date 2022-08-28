@@ -17,6 +17,9 @@ finish sign in""")
         sign_mail = input("Your e-mail address:")
         sign_address = input("Your streetname:")
 
+        # guest_dict = {email: Guest(sign_name, sign_mail, sign_address)}
+
         user1 = Guest(sign_name, sign_mail, sign_address)     
         user1.get_info()
 guest_menu()
+
