@@ -11,8 +11,8 @@ class User:
     
     def edit_info(self, new_name = None, new_mail = None, new_address = None):
         self.name = new_name if new_name is not None else self.name
-        self.mail = new_mail
-        self.address = new_address
+        self.mail = new_mail if new_mail is not None else self.mail
+        self.address = new_address if new_address is not None else self.address
 
 
 class Guest(User):
@@ -31,3 +31,6 @@ class Hosts(User):
 
     def add_properties(self):
         pass
+
+ryan = Guest("ryan", "ryan@mail.de", "ryanstreet")
+ryan.get_info()
