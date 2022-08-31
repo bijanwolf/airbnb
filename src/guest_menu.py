@@ -18,8 +18,13 @@ finish sign in""")
         sign_address = input("Your streetname:")
 
         # guest_dict = {email: Guest(sign_name, sign_mail, sign_address)}
+        guest_dict = {}
 
-        user1 = Guest(sign_name, sign_mail, sign_address)     
-        user1.get_info()
+        guest_dict[sign_mail] = Guest(sign_name, sign_mail, sign_address), username, password1
+        
+        # for key, value in guest_dict.items():
+        #     print (key, value.get_info())
+        # user1 = Guest(sign_name, sign_mail, sign_address)     
+        # user1.get_info()  
 guest_menu()
 
