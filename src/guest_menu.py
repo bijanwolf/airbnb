@@ -5,6 +5,7 @@ guest_dict = {}
 
 def guest_menu():
     #db = database
+    outfile = open('guest_data','wb')
     username = input("Create Username:")
     password = input("Create Password:")
     password1 = input("Confirm Password:")
@@ -23,17 +24,12 @@ finish sign in""")
         
 
         guest_dict.update({sign_mail:Guest(sign_name, sign_mail, sign_address)})
-        # guest_dict[sign_mail] = Guest(sign_name, sign_mail, sign_address)
-        # wird mein dict überschrieben, wegen der variable, oder wird es immer neu gestartet, wenn die funciton neu startet 
-        # answer: die function setzt bei jedem neuen Start den dict wieder auf 0
-        # der dict muss ausserhalb der function sein 
         
-        # user1 = Guest(sign_name, sign_mail, sign_address)     
-        # user1.get_info()  
-guest_menu()
-guest_menu()
-guest_menu()
+        #pickle gues_dict
+        pickle.dump(guest_dict,outfile)
+        outfile.close()
 
-print("########################")
-for key, value in guest_dict.items():
-    print (key, value)
+print(guest_dict)
+
+
+
