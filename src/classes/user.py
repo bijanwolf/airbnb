@@ -32,5 +32,3 @@ class Hosts(User):
     def add_properties(self):
         pass
 
-ryan = Guest("ryan", "ryan@mail.de", "ryanstreet")
-ryan.get_info()
