@@ -1,20 +1,19 @@
-def sign_up():
+def sign_up(x,y,z, a, b, c):
         #db = database
-        username = input("Create Username:")
-        global password
-        password = input("Create Password:")
-        password1 = input("Confirm Password:")
+        x = input("Create Username:")
+        y = input("Create Password:")
+        z = input("Confirm Password:")
 
-        if password != password1:
+        if y != z:
             print("Password does not match! You need to restart.")
-            sign_up()
+            sign_up(x,y,z, a, b, c)
         else: 
             print("""Account created successfully
-finish sign in""")
-            global sign_name
-            sign_name = input("Your first name:")
-            global sign_mail 
-            sign_mail = input("Your e-mail address:")
-            global sign_address 
-            sign_address = input("Your streetname:")
+            finish sign in""")
+            a = input("Your first name:")
+            b = input("Your e-mail address:")
+            c = input("Your streetname:")
             
+            res_dict = {}
+            res_dict.update({'sign_mail': b, 'sign_name': a, 'sign_address': c, 'password': x})
+            return res_dict
