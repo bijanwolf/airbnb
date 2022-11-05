@@ -12,7 +12,6 @@ def host_menu():
     username = ""
     password1 = ""
     
-
     if not os.path.isfile(file_name):
     #   else loadfile, then preceed
         sign_up_res = sign_up(username, password, password1, sign_name, sign_mail, sign_address)
@@ -23,8 +22,7 @@ def host_menu():
 
         host_dict = {}
 
-        host_dict.update({sign_mail:Hosts(sign_name, password, sign_address)})
-            
+        host_dict.update({sign_mail:[Hosts(sign_name, sign_mail, sign_address), password]})
             #pickle gues_dict
         pickle.dump(host_dict,open(file_name,'wb'))
             # outfile.close()
@@ -33,20 +31,19 @@ def host_menu():
         host_data = pickle.load( open(file_name, 'rb'))   
 
         sign_up_res = sign_up(username, password, password1, sign_name, sign_mail, sign_address)
-        print(host_data)
-        # print(sign_up_res['sign_name'])
+        
         sign_name = sign_up_res['sign_name']
         password =  sign_up_res['password']
         sign_mail = sign_up_res['sign_mail']
         sign_address = sign_up_res['sign_address']
-        print('################')
-        host_data.update({sign_mail:Hosts(sign_name, password, sign_address)})
-        print(host_data) 
+    
+        host_data.update({sign_mail:[Hosts(sign_name, sign_mail, sign_address), password]})
+ 
             #pickle gues_dict
         pickle.dump(host_data,open(file_name,'wb'))
             # outfile.close()   
         print(host_data)
-host_menu()
+
 
    
 

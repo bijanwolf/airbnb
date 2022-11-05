@@ -15,5 +15,5 @@ def sign_up(x,y,z, a, b, c):
             c = input("Your streetname:")
             
             res_dict = {}
-            res_dict.update({'sign_mail': b, 'sign_name': a, 'sign_address': c, 'password': x})
+            res_dict.update({'sign_mail': b, 'sign_name': a, 'sign_address': c, 'password': y})
             return res_dict
