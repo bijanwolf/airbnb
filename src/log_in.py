@@ -12,7 +12,7 @@ def log_in_host():
             try:
                 if pw == host_data[mail][1]:
                     print("Login success")
-                    # print("Hi %s"%host_data[username])
+                    print("Hi %s"%host_data[mail][0].name)
                 else: 
                     print("Password or Email incorrect")
             except: 
