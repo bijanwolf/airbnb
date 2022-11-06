@@ -1,13 +1,10 @@
 import pickle
 
-def emptypickle():
-    host_data = pickle.load( open('host_data', 'rb'))
-    guest_data = pickle.load( open('guest_data', 'rb')) 
+def clear_pickle(x):
+    data = pickle.load(open(x, 'rb')) 
 
-    host_data.clear()
-    guest_data.clear()
+    data.clear()
 
-    pickle.dump(host_data,open('host_data','wb'))
-    pickle.dump(guest_data,open('guest_data','wb'))
+    pickle.dump(data,open(x,'wb'))
 
-emptypickle()
+clear_pickle('host_data')

@@ -21,7 +21,7 @@ def guest_menu():
         sign_address = sign_up_res['sign_address']
 
         guest_dict = {}
-        guest_dict.update({sign_mail:Guest(sign_name, password, sign_address)})
+        guest_dict.update({sign_mail:[Guest(sign_name, sign_address), password]})
             
             #pickle gues_dict
         pickle.dump(guest_dict,open(file_name,'wb'))
@@ -37,11 +37,11 @@ def guest_menu():
         sign_mail = sign_up_res['sign_mail']
         sign_address = sign_up_res['sign_address']
             
-        guest_data.update({sign_mail:Guest(sign_name, password, sign_address)})
+        guest_data.update({sign_mail:[Guest(sign_name, sign_address), password]})
             
             #pickle gues_dict
         pickle.dump(guest_data,open(file_name,'wb'))
             # outfile.close()   
-guest_menu()
+
 
 

@@ -33,7 +33,7 @@ def log_in_guest():
             try:
                 if pw == guest_data[mail][1]:
                     print("Login success")
-                    # print("Hi %s"%host_data[username])
+                    print("Hi %s"%guest_data[mail][0].name)
                 else: 
                     print("Password or Email incorrect")
             except: 
@@ -42,5 +42,3 @@ def log_in_guest():
             print("Email does not exist")
     except:
         print("Login Error")
-
-log_in_host()
