@@ -34,4 +34,4 @@ def main():
                 log_in_guest()
         opt = False
 
-main()
+# main()

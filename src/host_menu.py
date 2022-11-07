@@ -22,7 +22,7 @@ def host_menu():
 
         host_dict = {}
 
-        host_dict.update({sign_mail:[Hosts(sign_name, sign_mail, sign_address), password]})
+        host_dict.update({sign_mail:Hosts(sign_name, sign_mail, sign_address,password)})
             #pickle gues_dict
         pickle.dump(host_dict,open(file_name,'wb'))
             # outfile.close()
@@ -37,12 +37,16 @@ def host_menu():
         sign_mail = sign_up_res['sign_mail']
         sign_address = sign_up_res['sign_address']
     
-        host_data.update({sign_mail:[Hosts(sign_name, sign_mail, sign_address), password]})
+        host_data.update({sign_mail:Hosts(sign_name, sign_mail, sign_address, password)})
+
+        host_data[sign_mail].get_info()
  
             #pickle gues_dict
         pickle.dump(host_data,open(file_name,'wb'))
             # outfile.close()   
-        print(host_data)
+    
+host_menu()
+
 
 
    
