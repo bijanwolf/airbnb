@@ -1,5 +1,21 @@
-# from booking import Booking
-# from property import Property
+from datetime import date, datetime
+
+class Property:
+    def __init__(self, name, address, price, availability_start, availability_end):
+        self.name = name
+        self.address = address
+        self.price  = price
+        self.availability_start = availability_start
+        self.availability_end = availability_end
+        self.bookings = []
+
+class Booking:
+    def __init__(self, start_date, end_date, property, guest):
+        self.start_date = start_date
+        self.end_date = end_date
+        self.property = property
+        self.guest = guest
+
 class User:
     def __init__(self, name, mail, address, password):
         self.name = name
@@ -25,6 +41,29 @@ class Guest(User):
         self.bookings = []
 
     def add_booking(self):
+        # start date
+        start = True
+        while start == True:
+            y, m, d = [int(x) for x in input('Type in the date of starting availability(yyyy/mm/dd):').split('/')]
+            try:
+                prop_avai_start = date(y, m , d)
+                start = False
+            except:
+                print('Date format was wrong, please type in the date again')
+        # end date
+        end = True
+        while end == True:
+            y, m, d = [int(x) for x in input('Type in the date of ending availability(yyyy/mm/dd):').split('/')]
+            try:
+                prop_avai_end = date(y, m , d)
+                end = False
+            except:
+                print('Date format was wrong, please type in the date again')
+        # list all available properties
+        # add booking to booking in property and to booking of instance of guest
+        pass
+    
+    def edit_booking(self):
         pass
 
 
@@ -39,19 +78,30 @@ class Hosts(User):
     def add_properties(self):
         prop_name = input('What is the name of the Property?:')
         prop_add = input('What is the address of your Property?:')
-        prop_price = input('What is the price per night in €?:')
-        prop_avai_start = input('Type in the date of starting availability:')
-        prop_avai_end = input('Type in the date of ending availability:')
+        prop_price = int(input('What is the price per night in €?:'))
+        start = True
+        while start == True:
+            y, m, d = [int(x) for x in input('Type in the date of starting availability(yyyy/mm/dd):').split('/')]
+            try:
+                prop_avai_start = date(y, m , d)
+                start = False
+            except:
+                print('Date format was wrong, please type in the date again')
+        end = True
+        while end == True:
+            y, m, d = [int(x) for x in input('Type in the date of ending availability(yyyy/mm/dd):').split('/')]
+            try:
+                prop_avai_end = date(y, m , d)
+                end = False
+            except:
+                print('Date format was wrong, please type in the date again')   
         self.properties.append(Property(prop_name, prop_add, prop_price, prop_avai_start, prop_avai_end))
+    
+    def edit_prop(self):
+        pass
 
-class Property:
-    def __init__(self, name, address, price, availability_start, availability_end ):
-        self.name = name
-        self.address = address
-        self.price  = price
-        self.availability_start = availability_start
-        self.availability_end = availability_end
-        self.bookings = []
+
+
 
 Werner = Hosts('Werner', 'Wernermail', 'Werneradress', 'Wernerpw')
 # Werner.get_info()
