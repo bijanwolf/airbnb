@@ -40,28 +40,7 @@ class Guest(User):
         super().__init__(name, mail, address, password)
         self.bookings = []
 
-    def add_booking(self):
-        # start date
-        start = True
-        while start == True:
-            y, m, d = [int(x) for x in input('Type in the date of starting availability(yyyy/mm/dd):').split('/')]
-            try:
-                prop_avai_start = date(y, m , d)
-                start = False
-            except:
-                print('Date format was wrong, please type in the date again')
-        # end date
-        end = True
-        while end == True:
-            y, m, d = [int(x) for x in input('Type in the date of ending availability(yyyy/mm/dd):').split('/')]
-            try:
-                prop_avai_end = date(y, m , d)
-                end = False
-            except:
-                print('Date format was wrong, please type in the date again')
-        # list all available properties
-        # add booking to booking in property and to booking of instance of guest
-        pass
+
     
     def edit_booking(self):
         pass
@@ -73,37 +52,16 @@ class Hosts(User):
         self.properties = []
     
     def get_prop_info(self):
-        print(self.properties)
+        print()
 
-    def add_properties(self):
-        prop_name = input('What is the name of the Property?:')
-        prop_add = input('What is the address of your Property?:')
-        prop_price = int(input('What is the price per night in €?:'))
-        start = True
-        while start == True:
-            y, m, d = [int(x) for x in input('Type in the date of starting availability(yyyy/mm/dd):').split('/')]
-            try:
-                prop_avai_start = date(y, m , d)
-                start = False
-            except:
-                print('Date format was wrong, please type in the date again')
-        end = True
-        while end == True:
-            y, m, d = [int(x) for x in input('Type in the date of ending availability(yyyy/mm/dd):').split('/')]
-            try:
-                prop_avai_end = date(y, m , d)
-                end = False
-            except:
-                print('Date format was wrong, please type in the date again')   
-        self.properties.append(Property(prop_name, prop_add, prop_price, prop_avai_start, prop_avai_end))
-    
+
     def edit_prop(self):
         pass
 
 
 
 
-Werner = Hosts('Werner', 'Wernermail', 'Werneradress', 'Wernerpw')
+# Werner = Hosts('Werner', 'Wernermail', 'Werneradress', 'Wernerpw')
 # Werner.get_info()
-Werner.add_properties()
-Werner.get_prop_info()
+# Werner.add_properties()
+# Werner.get_prop_info()
