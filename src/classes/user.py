@@ -1,12 +1,13 @@
 from datetime import date, datetime
 
 class Property:
-    def __init__(self, name, address, price, availability_start, availability_end):
+    def __init__(self, name, address, price, availability_start, availability_end, label):
         self.name = name
         self.address = address
         self.price  = price
         self.availability_start = availability_start
         self.availability_end = availability_end
+        self.label = None
         self.bookings = []
 
 class Booking:
@@ -40,7 +41,9 @@ class Guest(User):
         super().__init__(name, mail, address, password)
         self.bookings = []
 
+    def add_booking(self):
 
+        pass
     
     def edit_booking(self):
         pass
@@ -62,6 +65,7 @@ class Hosts(User):
 
 
 # Werner = Hosts('Werner', 'Wernermail', 'Werneradress', 'Wernerpw')
+# print(Werner.name)
 # Werner.get_info()
 # Werner.add_properties()
 # Werner.get_prop_info()
