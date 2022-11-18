@@ -1,6 +1,9 @@
 from datetime import date, datetime
 from all_props import prop_selection
 
+# function for choosing a date to see all available bookings
+
+
 def data_selection():
     start = True
     while start == True:
@@ -19,6 +22,10 @@ def data_selection():
         except:
             print('Date format was wrong, please type in the date again') 
     res = prop_selection(booking_start, booking_end)
-    print(res)
+    
+    # through the prop name finde the object of the class property in the host_data and add that object to booking in guest_data
+    # then add a further logic loop to not only look if that property is available for the choosen booking date on the side of the host, but also if that property is not booked at that time
+    # you get the property name the guest has decided to book 
+    return res
 
-data_selection()
+# data_selection()

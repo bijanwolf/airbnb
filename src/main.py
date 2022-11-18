@@ -33,5 +33,10 @@ def main():
             elif input_3 == 'y':
                 log_in_guest()
         opt = False
-
+    # if your a host get into the host_menu 
+        # add a property 
+        # edit properties 
+    # if your a guest get into the guest_menu
+        # add a booking 
+        # cancel booking
 # main()

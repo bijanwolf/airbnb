@@ -1,13 +1,12 @@
 from datetime import date, datetime
 
 class Property:
-    def __init__(self, name, address, price, availability_start, availability_end, label):
+    def __init__(self, name, address, price, availability_start, availability_end):
         self.name = name
         self.address = address
         self.price  = price
         self.availability_start = availability_start
         self.availability_end = availability_end
-        self.label = None
         self.bookings = []
 
 class Booking:
@@ -42,7 +41,10 @@ class Guest(User):
         self.bookings = []
 
     def add_booking(self):
+        
+        pass
 
+    def get_booking_info(self): 
         pass
     
     def edit_booking(self):
